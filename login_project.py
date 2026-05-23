@@ -16,6 +16,8 @@ def login():
 
         if username == "root" and password == "12345":
             session["userData"] = username #Store data in Session
+            return redirect(url_for("next_page"))
+
         else:
             return Response("Incorrect username and password",mimetype="text/plain")
 
@@ -25,7 +27,28 @@ def login():
     Username: <input type="text" name="username">
     Password: <input type="password" name="password">
     <input type="submit" value="Submit">
+    </form>
    '''
+
+#Next Page route
+@app.route("/next_page")
+def next_page():
+
+    if "userData" in session:
+        return f'''
+        <h1>Thanks for filling the form</h1><br>
+        <h3>Your data has been saved into Session</h3>
+        <a href={url_for("logout")}> <p>Click here for logout</p></a>'''
+
+    return redirect(url_for("login"))
+
+
+#Login route
+@app.route("/logout")
+def logout():
+    session.pop("userData",None)
+    return redirect(url_for("login"))
+
 
 #Run Flask Server
 if __name__ == "__main__":
