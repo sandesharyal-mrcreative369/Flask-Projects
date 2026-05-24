@@ -14,10 +14,11 @@ def home():
         username = request.form.get("username")
         password = request.form.get("password")
         name = request.form.get("name")
-        math = request.form.get("math")
-        science = request.form.get("science")
-        english = request.form.get("english")
+        math = float(request.form.get("math"))
+        science = float(request.form.get("science"))
+        english = float(request.form.get("english"))
 
+        total = (math+science+english)/300*100
 
         if username == "admin" and password == "12345":
             session['student'] = username
@@ -26,7 +27,8 @@ def home():
                 name=name,
                 math=math,
                 science=science,
-                english=english
+                english=english,
+                total = total
             )
 
         else:
