@@ -1,14 +1,20 @@
 from flask import (
-Flask,render_template, request,
-url_for, redirect,
-Response
+Flask,render_template
 )
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    pass
+    return render_template("home.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/welcome")
+def contact():
+    return render_template("welcome.html")
 
 
 if __name__ == "__main__":
