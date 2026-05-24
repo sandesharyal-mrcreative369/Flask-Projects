@@ -1,9 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
+
+<style>
+    nav a{
+        margin-right:20px;
+    }
+</style>
+
+<header>
+    <h1>This is common page</h1>
+</header>
+
+<nav>
+    <a href = "/">Home</a>
+    <a href = "/welcome">Welcome</a>
+    <a href = "/about">About</a>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer>Made by Sandesh Aryal</footer>
 
 </body>
 </html>
