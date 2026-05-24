@@ -16,13 +16,13 @@ Based on this condition we will use display on our HTML page
 {{ variable_name }}
 
 2) for conditional statement
-{{ if }}
+{% if %}
 //code
-{{ else }}
+{% elif % }
 //code
-{{ endif}}
+{% endif %}
 
 3) for For-Loop
-{{ for }}
+{% for %}
 //code
-{{ endfor}}
+{% endfor %}
