@@ -1,0 +1,28 @@
+user -> Take data from form
+(name,marks of 3 subjects)
+
+condition
+if 90-100 --> topper
+if 80-90 --> second
+if 70-80 --> third
+if 60-70 --> fourth
+if <60 --> fail
+
+Based on this condition we will use display on our HTML page
+
+
+#Jinja template
+1) For variable
+{{ variable_name }}
+
+2) for conditional statement
+{{ if }}
+//code
+{{ else }}
+//code
+{{ endif}}
+
+3) for For-Loop
+{{ for }}
+//code
+{{ endfor}}
