@@ -7,13 +7,34 @@
     <h1>Form Submitted</h1>
     <p>Your details are given below</p>
     <p><ul>
-    <li> Name: {{name}} </li>
-    <li> Math: {{math}} </li>
-    <li> Science: {{science}} </li>
-    <li> English: {{english}} </li>
+
+        <!-- Jinja Template-->
+        <li> Name: {{name}} </li>
+        <li> Math: {{math}} </li>
+        <li> Science: {{science}} </li>
+        <li> English: {{english}} </li>
+
     </ul></p>
 
-    <h1>Total is {{total}}</h1>
+        <h1>Total is {{total}}</h1>
+        <h1>Congratulations {{name}}</h1>
+        <!-- Jinja Template If condition -->
+        {%if total>=90 and total <100%}
+        <h3>Topper</h3>
+
+        {%elif total>=80 and total <=89%}
+        <h3>Second</h3>
+
+        {%elif total>=70 and total <=79%}
+        <h3>Third</h3>
+
+        {%elif total>=60 and total <=69%}
+        <h3>Fourth</h3>
+
+        {%else%}
+        <h3>Fail</h3>
+
+        {%endif%}
 
 </body>
 </html>
