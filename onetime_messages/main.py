@@ -3,7 +3,7 @@ from flask import (Flask,render_template,
                    flash)
 
 app = Flask(__name__)
-session.secret_key = 'mySecretKey'
+app.secret_key = 'mySecretKey'
 
 @app.route("/",methods=['GET','POST'])
 def home():
@@ -13,12 +13,12 @@ def home():
 
         if not name:
             flash("Name not provided")
-            return render_template('form.html')
+            return render_template("form.html")
 
         flash(f"Thank you {name} for your feedback messages")
         return redirect(url_for('thankyou'))
 
-    return render_template('form.html')
+    return render_template("form.html")
 
 @app.route("/thankyou")
 def thankyou():
