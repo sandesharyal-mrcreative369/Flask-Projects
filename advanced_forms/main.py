@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,session,url_for,redirect,flash
 from registration_form import *
 
 app = Flask(__name__)
+app.secret_key= "mySecretKey"
 
 @app.route("/",methods=["GET","POST"])
 def register():
