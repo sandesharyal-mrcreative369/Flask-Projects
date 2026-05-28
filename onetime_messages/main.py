@@ -20,6 +20,10 @@ def home():
 
     return render_template('form.html')
 
+@app.route("/thankyou")
+def thankyou():
+    return render_template('thankyou.html')
+
 
 
 if __name__=='__main__':
