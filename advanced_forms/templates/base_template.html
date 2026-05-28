@@ -2,12 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %} Flask-WTF Form{% endblock %}</title>
 </head>
 <body>
 <header>
     <h1>Welcome to our Website</h1>
+    <h2>This is falsk-wtf form</h2>
 </header>
+
+<!-- categories=True return the msg in tuple form(result_msg,actual_msg)
+eg:- ("success","hello") , ("failed","try agaib")
+-->
+{% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
 
 {% block content %}
 {% endblock %}
