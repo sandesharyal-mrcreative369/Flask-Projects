@@ -6,19 +6,26 @@ This is form page
 
 {% block content %}
 <h1>Here is the form</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+  {% endwith%}
 
 <form method="POST">
 
     <label>Name:</label>
-    <input type="text" value="name" placeholder="Enter your name">
+    <input type="text" name="name" placeholder="Enter your name">
     <br><br>
 
     <label>Message:</label>
-    <input type="text" value="message" placeholder="Enter your feedback message">
+    <input type="text" name="message" placeholder="Enter your feedback message">
     <br><br>
 
     <label>Submit</label>
-    <input type="submit" value="thankyou">
+    <input type="submit" value="Submit">
 
 
 </form>
